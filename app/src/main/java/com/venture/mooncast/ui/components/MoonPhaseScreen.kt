@@ -15,9 +15,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.venture.mooncast.R
+import com.venture.mooncast.ui.common.CalendarScreen
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.FloatBuffer
@@ -341,7 +343,7 @@ class MoonRenderer(private val context: Context) : GLSurfaceView.Renderer {
 @Composable
 fun MoonPhaseScreen() {
     val context = LocalContext.current
-    var phase by remember { mutableStateOf(0f) }
+    var phase by remember { mutableFloatStateOf(0f) }
     var renderer: MoonRenderer? by remember { mutableStateOf(null) }
 
     Column(
@@ -376,4 +378,18 @@ fun MoonPhaseScreen() {
             modifier = Modifier.fillMaxWidth()
         )
     }
+
+    CalendarScreen()
+}
+
+@Preview
+@Composable
+private fun MoonPhaseScreenPreview() {
+    MoonPhaseScreen()
+}
+
+@Preview
+@Composable
+private fun CalendarScreenPreview() {
+    CalendarScreen()
 }

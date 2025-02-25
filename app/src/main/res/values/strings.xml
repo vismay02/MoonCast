@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MoonCast</string>
+    <string name="left_arrow_desc">Navigate to previous month</string>
+    <string name="right_arrow_desc">Navigate to next month</string>
 </resources>
